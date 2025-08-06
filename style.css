@@ -1,0 +1,221 @@
+/*
+  ========================================
+  1. SETUP: Custom Properties and Resets
+  ========================================
+*/
+
+:root {
+    /* Primary Colors from the style guide */
+    --clr-primary-red: hsl(0, 100%, 67%);
+    --clr-primary-yellow: hsl(39, 100%, 56%);
+    --clr-primary-green: hsl(166, 100%, 37%);
+    --clr-primary-blue: hsl(234, 85%, 45%);
+
+    /* Gradient Colors from the style guide */
+    --clr-gradient-slate-blue: hsl(252, 100%, 67%);
+    --clr-gradient-royal-blue: hsl(241, 81%, 54%);
+    --clr-gradient-violet-blue: hsla(256, 72%, 46%, 1);
+    --clr-gradient-persian-blue: hsla(241, 72%, 46%, 0);
+
+    /* Neutral Colors from the style guide */
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-pale-blue: hsl(221, 100%, 96%);
+    --clr-neutral-lavender: hsl(241, 100%, 89%);
+    --clr-neutral-gray-blue: hsl(224, 30%, 27%);
+
+    /* Font Family */
+    --font-family-default: 'Hanken Grotesk', sans-serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-default);
+    background-color: var(--clr-neutral-pale-blue);
+
+    /* This centers the component on the page */
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+}
+
+/*
+  ========================================
+  2. STYLING: The Result Panel
+  ========================================
+*/
+
+.component {
+    /* Add a subtle shadow for the desktop view later */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .05);
+    border-radius: 2rem;
+    background-color: var(--clr-neutral-white);
+}
+
+.result-panel {
+    background: linear-gradient(var(--clr-gradient-slate-blue), var(--clr-gradient-royal-blue));
+    color: var(--clr-neutral-white);
+    text-align: center;
+    padding: 2rem 2.5rem; /* More padding horizontally */
+    
+    /* For mobile, round only the bottom corners */
+    border-radius: 0 0 2rem 2rem;
+
+    /* Use Flexbox to center content and create space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Space between elements */
+}
+
+.result-panel__title {
+    font-size: 1.125rem; /* 18px */
+    color: var(--clr-neutral-lavender);
+}
+
+.result-panel__circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Makes it a circle */
+    background: linear-gradient(var(--clr-gradient-violet-blue), var(--clr-gradient-persian-blue));
+    
+    /* Center the text inside the circle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-panel__score {
+    font-size: 3.5rem; /* 56px */
+    font-weight: 800;
+    line-height: 1; /* Adjust line height for better spacing */
+}
+
+.result-panel__total {
+    color: var(--clr-neutral-lavender);
+    font-weight: 500;
+}
+
+.result-panel__heading {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+}
+
+.result-panel__description {
+    color: var(--clr-neutral-lavender);
+    max-width: 25ch; /* Limit line length for readability */
+}
+/*
+  ========================================
+  3. STYLING: The Summary Panel
+  ========================================
+*/
+
+.summary-panel {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between title, list, and button */
+}
+
+.summary-panel__title {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 800;
+    color: var(--clr-neutral-gray-blue);
+}
+
+.summary-list {
+    list-style: none; /* Remove bullet points */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between; /* Pushes items to ends */
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+}
+
+.summary-item__label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space between icon and text */
+}
+
+/* Modifier classes for each category's unique colors */
+.summary-item--reaction {
+    color: var(--clr-primary-red);
+    background-color: hsla(0, 100%, 67%, 0.07);
+}
+.summary-item--memory {
+    color: var(--clr-primary-yellow);
+    background-color: hsla(39, 100%, 56%, 0.07);
+}
+.summary-item--verbal {
+    color: var(--clr-primary-green);
+    background-color: hsla(166, 100%, 37%, 0.07);
+}
+.summary-item--visual {
+    color: var(--clr-primary-blue);
+    background-color: hsla(234, 85%, 45%, 0.07);
+}
+
+
+.summary-item__score {
+    color: hsla(224, 30%, 27%, 0.5); /* Lighter gray for "/ 100" */
+    font-weight: 800;
+}
+
+.summary-item__score span {
+    color: var(--clr-neutral-gray-blue); /* Dark gray for the score number */
+}
+
+.continue-button {
+    background-color: var(--clr-neutral-gray-blue);
+    color: var(--clr-neutral-white);
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.continue-button:hover,
+.continue-button:focus {
+    background: linear-gradient(var(--clr-gradient-slate-blue), var(--clr-gradient-royal-blue));
+}
+
+/*
+  ========================================
+  5. RESPONSIVE: Desktop Layout
+  ========================================
+*/
+
+@media (min-width: 650px) {
+    .component {
+        display: flex; /* Switch layout to side-by-side */
+        max-width: 736px;
+    }
+
+    .result-panel {
+        width: 50%;
+        /* On desktop, all corners of the result panel are rounded */
+        border-radius: 2rem;
+    }
+
+    .summary-panel {
+        width: 50%;
+    }
+}

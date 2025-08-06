@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<main class="component">
+
+    <section class="result-panel">
+        
+        <h1 class="result-panel__title">Your Result</h1>
+
+        <div class="result-panel__circle">
+            <p class="result-panel__score">76</p>
+            <p class="result-panel__total">of 100</p>
+        </div>
+
+        <h2 class="result-panel__heading">Great</h2>
+        <p class="result-panel__description">You scored higher than 65% of the people who have taken these tests.</p>
+
+    </section>
+
+    <section class="summary-panel">
+
+        <h2 class="summary-panel__title">Summary</h2>
+
+        <ul class="summary-list">
+            <li class="summary-item summary-item--reaction">
+                <div class="summary-item__label">
+                    <img src="./assets/images/icon-reaction.svg" alt="" aria-hidden="true">
+                    <span>Reaction</span>
+                </div>
+                <p class="summary-item__score"><span>80</span> / 100</p>
+            </li>
+
+            <li class="summary-item summary-item--memory">
+                <div class="summary-item__label">
+                    <img src="./assets/images/icon-memory.svg" alt="" aria-hidden="true">
+                    <span>Memory</span>
+                </div>
+                <p class="summary-item__score"><span>92</span> / 100</p>
+            </li>
+            
+            <li class="summary-item summary-item--verbal">
+                <div class="summary-item__label">
+                    <img src="./assets/images/icon-verbal.svg" alt="" aria-hidden="true">
+                    <span>Verbal</span>
+                </div>
+                <p class="summary-item__score"><span>61</span> / 100</p>
+            </li>
+
+            <li class="summary-item summary-item--visual">
+                <div class="summary-item__label">
+                    <img src="./assets/images/icon-visual.svg" alt="" aria-hidden="true">
+                    <span>Visual</span>
+                </div>
+                <p class="summary-item__score"><span>73</span> / 100</p>
+            </li>
+        </ul>
+
+        <button class="continue-button">Continue</button>
+
+    </section>
+
+</main>
+
+</body>
+</html>
